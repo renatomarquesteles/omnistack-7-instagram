@@ -1,0 +1,1 @@
+Os controllers são responsáveis pela lógica da aplicação, pelas regras de negócio

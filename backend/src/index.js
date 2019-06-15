@@ -16,14 +16,15 @@ const io = require('socket.io')(server);
 
 // Conexão com o banco de dados (mongo)
 mongoose.connect('mongodb+srv://semana:semana@cluster0-rixmv.mongodb.net/test?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
+  useNewUrlParser: true,
 });
 
-// Repassa a informação do io para todas as rotas, garantindo acesso do req.io a todos os controllers
+// Repassa a informação do io para todas as rotas,
+// garantindo acesso do req.io a todos os controllers
 app.use((req, res, next) => {
-    req.io = io;
+  req.io = io;
 
-    next();
+  next();
 });
 
 // Permitir o acesso de diferentes IPs, de diferentes servidores possam acessar esse backend
